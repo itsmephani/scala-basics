@@ -16,3 +16,15 @@ def math(a: Int, b: Int, type: String) = {
     case "div" => div(a, b)
   }
 }
+
+// call by value
+def callByValue(x: Long): Unit {
+  print(x)
+  print(x)
+}
+
+// call by name, :=> means x is passed as is as as function and will be evaluated lazily.
+def callByName(x: => Long): Unit {
+  print(x)
+  print(x)
+}
