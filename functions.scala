@@ -34,7 +34,8 @@ callByName(System.nanoTime())
 
 // Default parameters and named arguments.
 def greet(name: String = "Hero", greeting: String = "Hi", age: Int = 0) = {
-  s"$greeting, I'm $name and I'm $age old."
+  s"$greeting, I'm $name and I'm $age years old."
 }
 
 print(greet(name = "Phani", age = 29))
+print(greet(age = 29, name = "Ram"))
