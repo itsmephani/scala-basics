@@ -39,3 +39,25 @@ def greet(name: String = "Hero", greeting: String = "Hi", age: Int = 0) = {
 
 print(greet(name = "Phani", age = 29))
 print(greet(age = 29, name = "Ram"))
+
+
+// Partial functions
+val evens: PartialFunction[Int, Int] =
+  new PartialFunction[Int, Int] {
+    //States that this partial function will take on the task
+    def isDefinedAt(x: Int) = x % 2 == 0
+
+    //What we do if this partial function matches
+    def apply(v1: Int) = 2
+  }
+
+val odds: PartialFunction[Int, Int] = new PartialFunction[Int, Int] {
+  def isDefinedAt(x: Int) = x % 2 != 0
+
+  def apply(v1: Int) = 3
+}
+
+val evenOrOdd = evens orElse odds
+evenOrOdd(2) // 2
+eventOrOdd(5) // 3
+
