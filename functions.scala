@@ -32,6 +32,9 @@ def callByName(x: => Long): Unit {
 callByValue(System.nanoTime())
 callByName(System.nanoTime())
 
-def details(name: String = "Hero", greeting: String = "Hi", age: Int = 0) = {
-  s"$greet, I'm $name and I'm $age old."
+// Default parameters and named arguments.
+def greet(name: String = "Hero", greeting: String = "Hi", age: Int = 0) = {
+  s"$greeting, I'm $name and I'm $age old."
 }
+
+print(greet(name = "Phani", age = 29))
