@@ -8,10 +8,10 @@ def factorial(n: Int) = {
 // Tail recursion
 def fact(n: Int) = {
   @tailrec
-  def factHelper(x: Int, accumulator: Int): Int = {
+  def factHelper(x: Int, accumulator: Int = 1): Int = {
     if (x < = 1) accumulator
     else factHelper(x - 1, x * accumulator)
   }
   
-  factHelper(x, 1)
+  factHelper(x)
 }
