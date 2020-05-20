@@ -1,6 +1,6 @@
 def add(a: Int, b: Int): Int = a + b
 
-def greet(message: String): String = s"Hi {message}"
+def greet(message: String): String = s"Hi $message"
 
 def math(a: Int, b: Int, type: String) = {
   // Can define inner functions
@@ -31,3 +31,7 @@ def callByName(x: => Long): Unit {
 
 callByValue(System.nanoTime())
 callByName(System.nanoTime())
+
+def details(name: String = "Hero", greeting: String = "Hi", age: Int = 0) = {
+  s"$greet, I'm $name and I'm $age old."
+}
