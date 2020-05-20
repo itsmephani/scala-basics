@@ -28,3 +28,6 @@ def callByName(x: => Long): Unit {
   print(x)
   print(x)
 }
+
+callByValue(System.nanoTime())
+callByName(System.nanoTime())
